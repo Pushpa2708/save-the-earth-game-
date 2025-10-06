@@ -1,0 +1,172 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #060AB2;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Timer */
+.timer {
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+#time {
+  color: red;
+  font-weight: bold;
+}
+
+/* Memory Game Layout */
+.memory-game {
+  width: 625px;
+  height: 588px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  perspective: 1000px;
+  margin: 0 auto;
+}
+
+/* Memory Cards */
+.memory-card {
+  width: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  aspect-ratio: 1 / 1; /* keeps cards square */
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  background: #1C7CCC;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 10px;
+  background: #1C7CCC;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+/* Hover effect */
+.back-face:hover {
+  background: #3a7999;
+  color: #f2f2f2;
+  transition: all 500ms ease;
+}
+
+/* Game message */
+#game-message h2 {
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 2px 0;
+
+  text-align: center;
+}
+
+#playAgain {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #e14cef, #cc00c2);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  margin-top: 10px;
+  margin-top: 4px;
+}
+
+#playAgain:hover {
+  background: linear-gradient(135deg, #5fc5ff, #0077e6);
+  transform: scale(1.05);
+}
+
+#playAgain:active {
+  transform: scale(0.95);
+}
+
+/* ===================== Responsive Design ===================== */
+
+/* Tablets (≤768px) */
+@media (max-width: 768px) {
+  .memory-game {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .memory-card {
+    width: calc(33.333% - 8px); /* 3 per row */
+  }
+
+  .timer {
+    font-size: 1.3rem;
+  }
+
+  #game-message h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile phones (≤500px) */
+@media (max-width: 500px) {
+  .memory-game {
+    width: 100%vw;
+    height: auto;
+  }
+
+
+  .memory-card {
+    width: calc(50% - 6px); /* 2 per row */
+  }
+
+  .timer {
+    font-size: 1.7rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  }
+
+  #game-message h2 {
+    font-size: 1.7rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  #playAgain {
+    width: 90%;
+    font-size: 1rem;
+    padding: 12px;
+    margin-top: 4px;
+    margin-bottom: 5px;
+  }
+}
