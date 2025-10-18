@@ -33,6 +33,7 @@ HTML5	Structure of the game
 CSS3	Styling and responsiveness
 JavaScript (ES6)	Game logic and timer
 📁 Project Structure
+
 Avengers-Memory-Game/
 │
 ├── index.html          # Main HTML file
