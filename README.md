@@ -52,7 +52,7 @@ Avengers-Memory-Game/
 
 Download or clone this repository:
 
-git clone https://github.com/yourusername/avengers-memory-game.git
+git clone https://github.com/Pushpa2708/save-the-earth-game.git
 
 
 Open the project folder:
